@@ -22,7 +22,7 @@ def deep_learn_based_salary_inference():
     # 구동시키는 importer 기준
     loaded_model = load_model(os.path.join("../../../data/model", "salary_model.h5"))
 
-    sample_number = 1000
+    sample_number = 200
     for _ in range(sample_number):
         signal = np.random.choice(signals)
         if signal >= salary_minimum_condition:
@@ -43,7 +43,6 @@ def deep_learn_based_salary_inference():
     encoded_traffic_light = keras.utils.to_categorical(mapped_data, num_classes=len(signals))
     encoded_action = keras.utils.to_categorical(mapped_labels, num_classes=len(actions))
 
-    sample_number = 1000
     correct_predicitions = 0
     for _ in range(sample_number):
         test_signal = random.randint(salary_min, salary_max)

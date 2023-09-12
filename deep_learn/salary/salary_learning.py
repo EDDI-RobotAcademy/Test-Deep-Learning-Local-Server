@@ -47,7 +47,7 @@ def salary_deep_learn():
 
     model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-    model.fit(encoded_traffic_light, encoded_action, epochs=5000, batch_size=32)
+    model.fit(encoded_traffic_light, encoded_action, epochs=1000, batch_size=32)
 
     # 구동시키는 importer 위치 기준
     model.save(os.path.join("../../../data/model", "salary_model.h5"))
